@@ -100,6 +100,10 @@ export default {
 			new TsconfigPathsPlugin(),
 		],
 	},
+	performance: {
+		maxAssetSize: 1048576,
+		maxEntrypointSize: 1048576,
+	},
 	devtool:
 		process.env.NODE_ENV === 'development' ? 'eval-source-map' : 'source-map',
 	devServer: {
