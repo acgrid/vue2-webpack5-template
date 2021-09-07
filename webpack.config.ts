@@ -1,7 +1,7 @@
 import path from 'path'
+import { Configuration, HotModuleReplacementPlugin, ProvidePlugin, DefinePlugin } from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import { Configuration, HotModuleReplacementPlugin, ProvidePlugin, DefinePlugin } from 'webpack'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import { VueLoaderPlugin } from 'vue-loader'

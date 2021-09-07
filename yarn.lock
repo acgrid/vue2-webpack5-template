@@ -1171,6 +1171,15 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
+"@types/mini-css-extract-plugin@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@types/mini-css-extract-plugin/-/mini-css-extract-plugin-2.2.0.tgz#fafa938acd38708759510572bb739450399ed08d"
+  integrity sha512-euW/Y51OoAWsAuqtxIGV7Y++EW4dKHMj7NSxHoTRD6SqK1vziYhGfDWTmtlf4jkjIrzUW88NpVXMfiJESysZAA==
+  dependencies:
+    "@types/node" "*"
+    tapable "^2.2.0"
+    webpack "^5"
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -6582,7 +6591,7 @@ webpack-sources@^3.2.0:
   resolved "https://registry.nlark.com/webpack-sources/download/webpack-sources-3.2.0.tgz?cache=0&sync_timestamp=1627898329169&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fwebpack-sources%2Fdownload%2Fwebpack-sources-3.2.0.tgz#b16973bcf844ebcdb3afde32eda1c04d0b90f89d"
   integrity sha1-sWlzvPhE682zr94y7aHATQuQ+J0=
 
-webpack@^5.52.0:
+webpack@^5, webpack@^5.52.0:
   version "5.52.0"
   resolved "https://registry.nlark.com/webpack/download/webpack-5.52.0.tgz?cache=0&sync_timestamp=1630682912330&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fwebpack%2Fdownload%2Fwebpack-5.52.0.tgz#88d997c2c3ebb62abcaa453d2a26e0fd917c71a3"
   integrity sha1-iNmXwsPrtiq8qkU9Kibg/ZF8caM=
