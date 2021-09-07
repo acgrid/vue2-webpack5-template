@@ -11,6 +11,7 @@ import {
   faSignInAlt,
   faUserPlus,
 } from '@fortawesome/free-solid-svg-icons'
+import './assets/images/1.ico'
 
 library.add(faSignInAlt)
 library.add(faSignOutAlt)
