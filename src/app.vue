@@ -15,6 +15,7 @@
       <li class="item">3</li>
       <li class="item">4</li>
     </ul>
+    <p>NODE_ENV: {{ env }}</p>
   </div>
 </template>
 
@@ -34,6 +35,10 @@ export default class App extends Vue {
   }
 
   public name = ''
+
+  get env (): string {
+    return process.env.NODE_ENV
+  }
 
   handleIncrement(): void {
     this.count++
