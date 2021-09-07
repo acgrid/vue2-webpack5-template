@@ -15,14 +15,18 @@
       <li class="item">3</li>
       <li class="item">4</li>
     </ul>
-    <p>NODE_ENV: {{ env }}</p>
+    <p>NODE_ENV: <b>{{ env }}</b></p>
+    <MyView text="awsl" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component } from 'vue-property-decorator'
+import MyView from './view.vue'
 
-@Component
+@Component({
+  components: { MyView }
+})
 export default class App extends Vue {
   public count = 0
   public inputValue = ''

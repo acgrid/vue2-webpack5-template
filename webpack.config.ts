@@ -40,6 +40,28 @@ export default {
         ],
       },
       {
+        test: /\.less$/i,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [['postcss-preset-env', {}]],
+              },
+            },
+          },
+          {
+            loader: 'less-loader'
+          },
+        ],
+      },
+      {
         test: /\.ts|js$/,
         exclude: /node_modules/,
         use: [
