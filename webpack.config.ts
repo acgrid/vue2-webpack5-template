@@ -1,7 +1,7 @@
-import * as path from 'path'
-import * as MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import * as HtmlWebpackPlugin from 'html-webpack-plugin'
-import * as Webpack from 'webpack'
+import path from 'path'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { Configuration, HotModuleReplacementPlugin, ProvidePlugin, DefinePlugin } from 'webpack'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import { VueLoaderPlugin } from 'vue-loader'
@@ -105,13 +105,14 @@ export default {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }),
-    new Webpack.HotModuleReplacementPlugin(),
+    new HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
+    new ProvidePlugin({
     new Webpack.ProvidePlugin({
       Vue: ['vue/dist/vue.esm.js', 'default'],
     }),
-    new Webpack.DefinePlugin({}),
+    new DefinePlugin({}),
   ],
   resolve: {
     extensions: ['.ts', '.js', '.vue'],
@@ -131,4 +132,4 @@ export default {
     port: 8888,
     compress: true,
   },
-} as Webpack.Configuration
+} as Configuration
