@@ -15,7 +15,6 @@ export default {
     filename: '[name].js',
     publicPath: '/',
   },
-  mode: 'production',
   module: {
     rules: [
       {
