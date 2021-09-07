@@ -105,12 +105,8 @@ export default {
   devtool:
     process.env.NODE_ENV === 'development' ? 'eval-source-map' : 'source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
     open: true,
     port: 8888,
     compress: true,
-    hot: true,
-    clientLogLevel: 'silent',
-    noInfo: true,
   },
 } as Webpack.Configuration
