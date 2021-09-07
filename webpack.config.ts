@@ -58,7 +58,7 @@ export default {
 			},
 			{
 				// webpack5 内置了 asset 模块, 用来代替 file-loader & url-loader & raw-loader 处理静态资源
-				test: /\.png|jpg|gif|jpeg|svg/,
+				test: /\.png|jpg|gif|jpeg/,
 				type: 'asset',
 				parser: {
 					dataUrlCondition: {

@@ -1,5 +1,6 @@
 <template>
 	<div class="app-main-wrapper">
+		<FontAwesomeIcon icon="user-plus" />
 		<button class="btn" @click="handleIncrement">Click me</button>
 		<p class="display">
 			{{ count }}
