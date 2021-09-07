@@ -9,12 +9,13 @@ import { VueLoaderPlugin } from 'vue-loader'
 console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV)
 
 export default {
-  entry: ['@babel/polyfill', './src/main.ts'],
+  entry: ['./src/main.ts'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     publicPath: '/',
   },
+  mode: 'production',
   module: {
     rules: [
       {
@@ -89,9 +90,7 @@ export default {
     new Webpack.ProvidePlugin({
       Vue: ['vue/dist/vue.esm.js', 'default'],
     }),
-    new Webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    }),
+    new Webpack.DefinePlugin({}),
   ],
   resolve: {
     extensions: ['.ts', '.js', '.vue'],
