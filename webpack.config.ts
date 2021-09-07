@@ -109,8 +109,7 @@ export default {
     new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
     new ProvidePlugin({
-    new Webpack.ProvidePlugin({
-      Vue: ['vue/dist/vue.esm.js', 'default'],
+      Vue: ['vue/dist/vue.runtime.esm.js', 'default'],
     }),
     new DefinePlugin({}),
   ],

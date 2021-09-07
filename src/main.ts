@@ -16,6 +16,9 @@ library.add(faSignInAlt)
 library.add(faSignOutAlt)
 library.add(faUserPlus)
 
+Vue.config.productionTip = false
+Vue.config.devtools = false
+
 Vue.component('FontAwesomeIcon', FontAwesomeIcon)
 
 export default new Vue({
