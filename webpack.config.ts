@@ -4,8 +4,7 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as Webpack from 'webpack';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-
-const VueLoaderPlugin = require('vue-loader/lib/plugin-webpack5');
+import { VueLoaderPlugin } from 'vue-loader';
 
 console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV);
 
