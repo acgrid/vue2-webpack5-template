@@ -8,6 +8,8 @@ import { VueLoaderPlugin } from 'vue-loader'
 
 console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV)
 
+const extractor = process.env.NODE_ENV === 'production' ? { loader: MiniCssExtractPlugin.loader }: { loader: 'vue-style-loader' }
+
 export default {
   entry: ['./src/main.ts'],
   output: {
@@ -20,11 +22,10 @@ export default {
       {
         test: /\.css|sass|scss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
+          extractor,
           {
             loader: 'css-loader',
+            options: { importLoaders: 2 }
           },
           {
             loader: 'postcss-loader',
@@ -42,19 +43,18 @@ export default {
       {
         test: /\.less$/i,
         use: [
+          extractor,
           {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          {
-            loader: 'css-loader'
+            loader: 'css-loader',
+            options: { importLoaders: 2 }
           },
           {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
                 plugins: [['postcss-preset-env', {}]],
-              },
-            },
+              }
+            }
           },
           {
             loader: 'less-loader'
@@ -125,7 +125,8 @@ export default {
     maxEntrypointSize: 1048576,
   },
   devtool:
-    process.env.NODE_ENV === 'development' ? 'eval-source-map' : 'source-map',
+    // https://github.com/vuejs/vue-loader/issues/1795
+    process.env.NODE_ENV === 'development' ? 'eval' : 'nosources-source-map',
   devServer: {
     open: true,
     port: 8888,
