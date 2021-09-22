@@ -5,12 +5,13 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import { VueLoaderPlugin } from 'vue-loader'
+import { InjectManifest } from 'workbox-webpack-plugin'
 
 console.log('process.env.NODE_ENV :>> ', process.env.NODE_ENV)
 
 const extractor = process.env.NODE_ENV === 'production' ? { loader: MiniCssExtractPlugin.loader }: { loader: 'vue-style-loader' }
 
-export default {
+const config = {
   entry: ['./src/main.ts'],
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -133,3 +134,13 @@ export default {
     compress: true,
   },
 } as Configuration
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(new InjectManifest({
+    maximumFileSizeToCacheInBytes: 1048576 * 4,
+    swSrc: 'src/service.ts',
+    swDest: 'sw.js'
+  }))
+}
+
+export default config
