@@ -81,7 +81,7 @@ const config = {
       },
       {
         // webpack5 内置了 asset 模块, 用来代替 file-loader & url-loader & raw-loader 处理静态资源
-        test: /\.(png|jpe?g|gif|ico)/,
+        test: /\.(png|jpe?g|gif|ico)$/,
         type: 'asset',
         parser: {
           dataUrlCondition: {
@@ -93,10 +93,10 @@ const config = {
         },
       },
       {
-        test: /\.txt|xlsx/,
-        type: 'asset',
+        test: /\.(json|txt)$/,
+        type: 'asset/resource',
         generator: {
-          filename: 'files/[base]',
+          filename: '[base]',
         },
       },
     ],

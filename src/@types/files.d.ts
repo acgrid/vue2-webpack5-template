@@ -1,2 +1,2 @@
 declare module '*.txt';
-declare module '*.xlsx';
+declare module '*.json';

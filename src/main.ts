@@ -13,6 +13,8 @@ import {
   faUserPlus,
 } from '@fortawesome/free-solid-svg-icons'
 import './assets/images/1.ico'
+import './robots.txt'
+import './manifest.json'
 
 library.add(faSignInAlt)
 library.add(faSignOutAlt)
